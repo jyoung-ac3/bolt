@@ -1,0 +1,32 @@
+---
+
+# Define Puppet version settings
+puppet_agent::collection: puppet8
+puppet_agent::package_version: latest
+
+# Define R10k YAML settings
+r10k::cachedir: /var/cache/r10k
+r10k::sources:
+  control_repo: 
+    basedir: '/etc/puppetlabs/code/environments'
+    remote: 'git@github.com:jyou954/puppet-homelab.git'
+
+# Sudoers settings
+sudo::prefix: 'puppet_'
+sudo::config_file_replace: false
+sudo::configs:
+  admin:
+    content: '%admins ALL=(ALL) NOPASSWD: ALL'
+    priority: 10
+
+accounts::group_list:
+  admins: {}
+
+accounts::user_list:
+  overlord:
+    comment: Overlord
+    groups: [ 'admins' ]
+
+# Packages to install
+packages:
+  - nano

@@ -1,0 +1,21 @@
+---
+name: bolt
+
+modulepath:
+  - site
+
+modules:
+  - name: puppet/puppet_agent
+    git: https://github.com/puppetlabs/puppetlabs-puppet_agent.git
+    ref: v4.20.1
+    resolve: false
+
+  - name: puppetlabs/r10k
+    git: https://github.com/voxpupuli/puppet-r10k.git
+    ref: v13.0.0
+    resolve: false
+
+  - name: saz/sudo
+    git: https://github.com/saz/puppet-sudo.git
+    ref: v8.0.0
+    resolve: false
