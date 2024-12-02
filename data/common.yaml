@@ -1,7 +1,7 @@
 ---
 
 # Define Puppet version settings
-puppet_agent::collection: puppet8
+puppet_agent::collection: puppet7
 puppet_agent::package_version: latest
 
 # Define R10k YAML settings
@@ -9,7 +9,7 @@ r10k::cachedir: /var/cache/r10k
 r10k::sources:
   control_repo: 
     basedir: '/etc/puppetlabs/code/environments'
-    remote: 'git@github.com:jyou954/puppet-homelab.git'
+    remote: 'remotecontrolrepo'
 
 # Sudoers settings
 sudo::prefix: 'puppet_'
@@ -23,8 +23,8 @@ accounts::group_list:
   admins: {}
 
 accounts::user_list:
-  overlord:
-    comment: Overlord
+  someadminuser:
+    comment: someadminuser
     groups: [ 'admins' ]
 
 # Packages to install
