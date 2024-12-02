@@ -29,13 +29,13 @@
 groups:
 - name: puppetservers
   targets:
-    - uri: jy-vp-puppet-02.jyoung-primary.com
+    - uri: hostxxxx
       name: puppet02
   config:
     transport: ssh
     ssh:
-      user: overlord
-      password: 0v3r!07D@dmin
+      user: xxx
+      password: xxx
       run-as: root
-      sudo-password: 0v3r!07D@dmin
+      sudo-password: xxx
       host-key-check: false
